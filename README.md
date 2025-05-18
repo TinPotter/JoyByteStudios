@@ -1,2 +1,2 @@
-# spaghettigame
-A website about the game "Spaghetti game"
+# JoyByte Studios
+A website about the development team "JoyByte"
