@@ -636,7 +636,7 @@
                         <li><a href="#" class="text-slate-400 hover:text-white text-sm">Contact Us</a></li>
                     </ul>
                 </div>       
-        <div>
+       <div>
     <h3 class="text-lg font-semibold text-white mb-4">Newsletter</h3>
     <p class="text-slate-400 text-sm mb-4">
         Subscribe to get updates on new games and features.
@@ -656,15 +656,36 @@
             <i class="fas fa-paper-plane"></i>
         </button>
     </div>
+    <p id="error-message" class="text-red-400 text-xs mt-2 hidden"></p>
 </div>
 
 <script>
 function sendToWebhook() {
     const emailInput = document.getElementById('newsletter-email');
+    const errorMessage = document.getElementById('error-message');
     const email = emailInput.value.trim();
     
+    // Reset error state
+    errorMessage.classList.add('hidden');
+    emailInput.classList.remove('border-red-500');
+    
+    // Validate email format and domain
+    const validDomains = ['gmail.com', 'outlook.com', 'yahoo.com'];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (!email) {
-        alert('Please enter a valid email address');
+        showError("Please enter an email address");
+        return;
+    }
+    
+    if (!emailRegex.test(email)) {
+        showError("Please enter a valid email address");
+        return;
+    }
+    
+    const domain = email.split('@')[1];
+    if (!validDomains.includes(domain)) {
+        showError("Please use a Gmail, Outlook, or Yahoo email address");
         return;
     }
 
@@ -694,6 +715,13 @@ function sendToWebhook() {
         console.error('Error:', error);
         alert('An error occurred. Please try again later.');
     });
+    
+    function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        emailInput.focus();
+    }
 }
 </script>
                 </div>
