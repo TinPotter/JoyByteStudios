@@ -265,28 +265,19 @@
 </section>
 
 <script>
-  async function updatePlayerCount() {
-    const placeId = '7358805202'; // Replace with your actual Place ID
-    try {
-      // Step 1: Get Universe ID via RoProxy
-      const universeResponse = await fetch(`https://apis.roproxy.com/universes/v1/places/${placeId}/universe`);
-      const universeData = await universeResponse.json();
-      const universeId = universeData.universeId;
+async function UpdateStuff() {
+          try {
+            const response = await fetch("https://corsproxy.io/?https://games.roblox.com/v1/games?universeIds=7358805202");
+            const data = await response.json();
+            const playing = data.data[0].playing;
+            document.getElementById("players").textContent =  ${playing};
+          } catch (error) {
+            document.getElementById("players").textContent = "ERROR";
+            console.error("Fetch error:", error);
+          }
+        }
 
-      // Step 2: Get Game Stats via RoProxy
-      const statsResponse = await fetch(`https://games.roproxy.com/v1/games?universeIds=${universeId}`);
-      const statsData = await statsResponse.json();
-      const visits = statsData.data[0].visits;
-
-      // Step 3: Update HTML
-      document.getElementById('players').textContent = visits.toLocaleString();
-    } catch (error) {
-      console.error('Error fetching player count:', error);
-      document.getElementById('players').textContent = 'N/A';
-    }
-  }
-
-  updatePlayerCount();
+        UpdateStuff();
 </script>
 
 
