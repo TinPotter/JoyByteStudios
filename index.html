@@ -243,27 +243,51 @@
             </section>
 
             <!-- Stats -->
-            <section class="bg-slate-800 rounded-2xl p-8 mb-16">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div>
-                        <div class="text-4xl font-bold gradient-text mb-2">1+</div>
-                        <div class="text-slate-300">Games Created</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold gradient-text mb-2" id="players">250+</div>
-                        <div class="text-slate-300">Total Players</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold gradient-text mb-2">20+</div>
-                        <div class="text-slate-300">Discord Members</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold gradient-text mb-2">5</div>
-                        <div class="text-slate-300">Average Rating</div>
-                    </div>
-                </div>
-            </section>
-        </div>
+<section class="bg-slate-800 rounded-2xl p-8 mb-16">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-4xl font-bold gradient-text mb-2">1+</div>
+      <div class="text-slate-300">Games Created</div>
+    </div>
+    <div>
+      <div class="text-4xl font-bold gradient-text mb-2" id="players">Loading...</div>
+      <div class="text-slate-300">Total Players</div>
+    </div>
+    <div>
+      <div class="text-4xl font-bold gradient-text mb-2">20+</div>
+      <div class="text-slate-300">Discord Members</div>
+    </div>
+    <div>
+      <div class="text-4xl font-bold gradient-text mb-2">5</div>
+      <div class="text-slate-300">Average Rating</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  async function updatePlayerCount() {
+    const placeId = '123929812027375'; // Replace with your actual Place ID
+    try {
+      // Step 1: Get Universe ID
+      const universeResponse = await fetch(`https://apis.roblox.com/universes/v1/places/${placeId}/universe`);
+      const universeData = await universeResponse.json();
+      const universeId = universeData.universeId;
+
+      // Step 2: Get Game Stats
+      const statsResponse = await fetch(`https://games.roblox.com/v1/games?universeIds=${universeId}`);
+      const statsData = await statsResponse.json();
+      const visits = statsData.data[0].visits;
+
+      // Step 3: Update HTML
+      document.getElementById('players').textContent = visits.toLocaleString();
+    } catch (error) {
+      console.error('Error fetching player count:', error);
+      document.getElementById('players').textContent = 'N/A';
+    }
+  }
+
+  updatePlayerCount();
+</script>
 
         <!-- Our Games Page -->
         <div id="games" class="page">
