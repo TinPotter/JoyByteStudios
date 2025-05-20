@@ -1,28 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #0f172a;
     color: #f8fafc;
-    margin: 0;
-    padding: 0;
 }
 
-* {
-    border: 0;
-    font: inherit;
-    font-style: normal;
-    font-size: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    quotes: none;
-    text-decoration: none;
-    vertical-align: baseline;
-}
-
-/* Text Styles */
 .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
@@ -30,12 +13,10 @@ body {
     color: transparent;
 }
 
-/* Background Styles */
 .hero-gradient {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
 }
 
-/* Card Styles */
 .game-card {
     transition: all 0.3s ease;
     transform-style: preserve-3d;
@@ -56,7 +37,6 @@ body {
     background-color: #1e293b;
 }
 
-/* Navigation Styles */
 .nav-link {
     position: relative;
 }
@@ -80,7 +60,6 @@ body {
     width: 100%;
 }
 
-/* Page Transition Styles */
 .page {
     display: none;
     animation: fadeIn 0.5s ease;
