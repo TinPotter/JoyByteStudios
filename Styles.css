@@ -249,7 +249,7 @@ body {
 
 .playnow-btn::before {
     content: '';
-    background: #ffc100;
+    background-color: #ffc100;
     width: 24px;
     height: 24px;
     display: block;
