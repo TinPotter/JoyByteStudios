@@ -217,7 +217,7 @@ body {
 .playnow-btn {
     font-size: 16px;
     font-weight: 600;
-    background: linear-gradient(to right, #facc15, #f97316); /* yellow-400 to orange-500 */
+    background-color: #ffd500;
     padding: 12px 16px 12px 24px;
     display: flex;
     align-items: center;
@@ -249,7 +249,7 @@ body {
 
 .playnow-btn::before {
     content: '';
-    background: linear-gradient(to right, #f59e0b, #ea580c); /* darker orange tones */
+    background: #ffc100;
     width: 24px;
     height: 24px;
     display: block;
