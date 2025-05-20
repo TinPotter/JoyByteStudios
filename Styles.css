@@ -73,3 +73,61 @@ body {
 .active-page {
     display: block;
 }
+
+/* New Discord Button Styles */
+.discord-btn {
+  font-size:16px;
+  font-weight: 600;
+  background-color:#5865F2; /* Discord brand color */
+  padding:16px 16px 16px 24px;
+  display:flex;
+  align-items:center;
+  border-radius:99px;
+  position:relative;
+  transition: all .5s cubic-bezier(.77,0,.175,1);
+  border: none;
+  cursor: pointer;
+}
+
+.discord-btn .text{
+  color:#fff;
+  line-height:1;
+  position:relative;
+  z-index:5;
+  margin-right:24px;
+}
+
+.discord-btn svg{
+  display:inline-block;
+  position:relative;
+  z-index:5;
+  transform: rotate(0deg) translateX(0);
+  transform-origin: left;
+  transition: all .5s cubic-bezier(.77,0,.175,1);
+}
+
+.discord-btn::before{
+  content:'';
+  background-color:#404EED; /* Slightly darker Discord color */
+  width:24px;
+  height:24px;
+  display:block;
+  position:absolute;
+  z-index:1;
+  border-radius:99px;
+  top:50%;
+  right:12px;
+  transform:translateY(-50%);
+  transition: all .5s cubic-bezier(.77,0,.175,1);
+}
+
+.discord-btn:hover svg{
+  transform: rotate(45deg) translateX(-8px);
+}
+
+.discord-btn:hover::before{
+  content:'';
+  width:100%;
+  height:100%;
+  right:0;
+}
