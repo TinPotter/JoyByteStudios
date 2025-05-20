@@ -154,17 +154,7 @@ body {
     right: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .discord-btn {
-        padding: 10px 14px 10px 20px;
-    }
-    .discord-btn .text {
-        margin-right: 18px;
-    }
-}
-
-/* Play Our Games Button Styles */
+/* Play Our Games Button Styles (Blue) */
 .game-btn {
     font-size: 16px;
     font-weight: 600;
@@ -221,16 +211,6 @@ body {
     width: 100%;
     height: 100%;
     right: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .game-btn {
-        padding: 10px 14px 10px 20px;
-    }
-    .game-btn .text {
-        margin-right: 18px;
-    }
 }
 
 /* Play Now Button Styles (Yellow to Orange) */
@@ -295,6 +275,18 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .discord-btn {
+        padding: 10px 14px 10px 20px;
+    }
+    .discord-btn .text {
+        margin-right: 18px;
+    }
+    .game-btn {
+        padding: 10px 14px 10px 20px;
+    }
+    .game-btn .text {
+        margin-right: 18px;
+    }
     .playnow-btn {
         padding: 10px 14px 10px 20px;
     }
