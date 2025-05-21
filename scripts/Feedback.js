@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const webhookUrl = "https://discord.com/api/webhooks/1374358208151289936/eod-wCd2tshESRSsoy3p1xosdrUvW9KwqzSjf8x6sH76HXhJJcC1mccEmeTw1UW_5I6o";
+  const encodedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3NDcyMzk1OTk3NDUzMTE2NC83RG4wTDI2ekVXaHoyNk5TUGgzVVpoZUFkbnJ6ZzRmNWV1TEw5OTBPbERPSlJUWHZuUFh1Zno1UHZFS0FsYjU5X19IbHc=
+";
+  const webhookUrl = atob(encodedWebhook);
 
   const submitButton = document.getElementById("feedback-submit");
   const feedbackForm = document.getElementById("feedback-form");
