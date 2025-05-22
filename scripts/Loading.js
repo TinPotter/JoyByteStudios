@@ -1,4 +1,3 @@
-<script>
     // Loading animation
     document.addEventListener('DOMContentLoaded', function() {
         const loadingOverlay = document.getElementById('loading-overlay');
@@ -13,4 +12,3 @@
             }, 500); // Match this with the CSS transition time
         }, 1000); // 1 second display time
     });
-</script>
