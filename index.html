@@ -11,6 +11,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen">
+    <!-- Loading Animation -->
+<div class="loading-overlay" id="loading-overlay">
+    <div class="loading-container">
+        <svg
+            class="container" 
+            x="0px" 
+            y="0px"
+            viewBox="0 0 55 23.1"
+            height="23.1"
+            width="55"
+            preserveAspectRatio='xMidYMid meet'
+        >
+            <path
+                class="track" 
+                fill="none" 
+                stroke-width="4" 
+                pathlength="100"
+                d="M26.7,12.2c3.5,3.4,7.4,7.8,12.7,7.8c5.5,0,9.6-4.4,9.6-9.5C49,5,45.1,1,39.8,1c-5.5,0-9.5,4.2-13.1,7.8l-3.4,3.3c-3.6,3.6-7.6,7.8-13.1,7.8C4.9,20,1,16,1,10.5C1,5.4,5.1,1,10.6,1c5.3,0,9.2,4.5,12.7,7.8L26.7,12.2z"
+            />
+            <path
+                class="car" 
+                fill="none" 
+                stroke-width="4" 
+                pathlength="100"
+                d="M26.7,12.2c3.5,3.4,7.4,7.8,12.7,7.8c5.5,0,9.6-4.4,9.6-9.5C49,5,45.1,1,39.8,1c-5.5,0-9.5,4.2-13.1,7.8l-3.4,3.3c-3.6,3.6-7.6,7.8-13.1,7.8C4.9,20,1,16,1,10.5C1,5.4,5.1,1,10.6,1c5.3,0,9.2,4.5,12.7,7.8L26.7,12.2z"
+            />
+        </svg>
+        <div class="loading-text">Loading JoyByte Studios</div>
+    </div>
+</div>
     <!-- Navigation -->
     <nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -409,5 +439,22 @@
     <script src="scripts/Newsletter.js"></script>
     <script src="scripts/Navigation.js"></script>
     <script src="scripts/update.js"></script>
+
+    <script>
+    // Loading animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        
+        // Show loading animation for 1 second
+        setTimeout(function() {
+            loadingOverlay.classList.add('fade-out');
+            
+            // Remove the overlay after fade out completes
+            setTimeout(function() {
+                loadingOverlay.remove();
+            }, 500); // Match this with the CSS transition time
+        }, 1000); // 1 second display time
+    });
+</script>
 </body>
 </html>
